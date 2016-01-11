@@ -6,6 +6,10 @@ controllers.controller("TweetsController", ['$scope', '$routeParams', '$location
       return $location.path("/").search('keywords', keywords);
     };
 
+    $scope.view = function(tweetId) {
+      return $location.path("/tweets/" + tweetId);
+    };
+
     Tweet = $resource('/tweets/:tweetId', {
       tweetId: "@id",
       format: 'json'

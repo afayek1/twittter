@@ -6,7 +6,7 @@
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :tweets, only: [:index]
+  resources :tweets, only: [:index, :show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

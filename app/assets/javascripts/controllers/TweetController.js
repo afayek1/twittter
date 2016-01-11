@@ -1,4 +1,9 @@
-controllers.controller("TweetController", ['$scope', '$routeParams', '$resource', function($scope, $routeParams, $resource) {
+controllers.controller("TweetController", ['$scope', '$routeParams', '$resource', '$location',
+  function($scope, $routeParams, $resource, $location) {
+    $scope.back = function() {
+      return $location.path('/')
+    }
+
     var Tweet = $resource('/tweets/:tweetId', {
       tweetId: "@id",
       format: 'json'

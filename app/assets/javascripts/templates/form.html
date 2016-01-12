@@ -1,29 +1,13 @@
-<!-- <aside class="flash row">
-  <article flash-alert duration="0" active-class="alert" class="col-md-6 col-md-offset-3">
-    {{flash.message}}
-  </article>
-</aside> -->
-<form class="form-horizontal" role="form" class="edit-user">
-
-  <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
-    <label for="name"
-      class="col-md-2 control-label col-md-offset-2">
-      Name
-    </label>
-    <div class="col-md-5">
-      <input type="text" name="name" class="form-control" placeholder="e.g. Baked Alaska" ng-model="tweet.text">
+<div class="container">
+  <form class="form-horizontal" role="form" class="edit-user">
+    <div class="form-group">
+      <label for="text">Tweet</label>
+      <input type="text" name="name" class="form-control" placeholder="Chirp here" ng-model="tweet.text">
     </div>
-  </div>
 
-
-
-  <div class="form-group">
-    <div class="align">
-      <button class="btn btn-default" ng-click="cancel()"> Cancel</button>
+    <div class="form-group">
+        <button class="btn btn-default" ng-click="cancel()"> Cancel</button>
+        <button class="btn btn-primary" ng-click="save()"> Save </button>
     </div>
-    <div class="col-md-4 text-right">
-      <button class="btn btn-primary" ng-click="save()"> Save </button>
-    </div>
-  </div>
-
-</form>
+  </form>
+</div>

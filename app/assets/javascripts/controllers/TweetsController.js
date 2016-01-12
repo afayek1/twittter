@@ -20,18 +20,21 @@ controllers.controller("TweetsController", ['$scope', '$routeParams', '$location
       return $location.path("/tweets/" + tweetId);
     };
 
-    $scope.newTweet = function() {
-      return $location.path('/tweets/new');
+    $scope.create = function(text) {
+      $scope.tweet = {};
+      $scope.tweet.text = text;
+      var tweet = Tweet.create($scope.tweet);
+      $scope.tweets.unshift(tweet);
+      $scope.keywords = '';
     }
 
     $scope.edit = function(tweetId) {
       return $location.path('/tweets/' + tweetId + '/edit');
     };
 
-
-    $scope.delete = function(tweetId) {
+    $scope.delete = function(tweetId, index) {
       Tweet.destroy({ tweetId: tweetId });
-      $scope.tweets = Tweet.query();
+      $scope.tweets.splice(index, 1)
     };
   }]);
 

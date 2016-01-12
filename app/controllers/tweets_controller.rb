@@ -20,7 +20,7 @@ end
 def create
   @tweet = Tweet.new(tweet_params)
   @tweet.save
-  render 'show', status: 201
+  render :json => @tweet, status: 201
 end
 
 def update
